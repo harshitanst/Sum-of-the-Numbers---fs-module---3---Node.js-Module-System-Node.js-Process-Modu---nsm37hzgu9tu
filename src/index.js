@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const inputFilePath= path.join(__dirname,'input.txt');
 const outputFilePath = path.join(__dirname, "output.txt");
-fs.readFile(inputFilePath,'utf-8',(err,data)=>{
+fs.readFileSync(inputFilePath,'utf-8',(err,data)=>{
     if(err){
         console.log('error aagya')
         return;
@@ -14,7 +14,7 @@ fs.readFile(inputFilePath,'utf-8',(err,data)=>{
         const number= Number(parts[1])
         total+=number
     });
-    fs.writeFile(outputFilePath,total.toString(),'utf-8',(err)=>{
+    fs.writeFileSync(outputFilePath,total.toString(),'utf-8',(err)=>{
         if(err){
             console.log('eeror aaya')
             return ;
@@ -22,3 +22,4 @@ fs.readFile(inputFilePath,'utf-8',(err,data)=>{
         console.log('ouput aagyaa');
     })
 })
+
